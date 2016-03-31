@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="BluetoothTest2.pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BluetoothTest2.pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="SplitViewStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid Background="{StaticResource SplitViewBackgroundBrush}">
+        <SplitView x:Name="ShellSplitView"  Margin="0 48 0 0" DisplayMode="Overlay"
+               IsPaneOpen="True" CompactPaneLength="48" OpenPaneLength="200"
+               PaneBackground="{ThemeResource SplitViewBackgroundBrush}">
+            <SplitView.Pane>
+                <StackPanel>
+                    <!-- Home button -->
+                    <RadioButton Tag="&#xe10f;" Content="Home" Style="{StaticResource SplitViewNavButtonStyle}" Checked="OnHomeButtonChecked" IsChecked="True" />
+
+                    <!-- Settings button -->
+                    <RadioButton Tag="&#xe115;" Content="Settings" Style="{StaticResource SplitViewNavButtonStyle}" Checked="OnSettingsButtonChecked" />
+
+                    <!-- About button -->
+                    <RadioButton Tag="&#xe783;" Content="About" Style="{StaticResource SplitViewNavButtonStyle}" Checked="OnAboutButtonChecked" />
+                </StackPanel>
+            </SplitView.Pane>
+        </SplitView>
+        <!-- Hamburger Button -->
+        <Button x:Name="HamburgerButton"
+                FontFamily="Segoe MDL2 Assets"
+                Content="&#xE700;"
+                Width="40"
+                Height="40"
+                Background="{StaticResource MenuButtonBackgroundBrush}"
+                Foreground="White"
+                VerticalAlignment="Top"
+                BorderThickness="0"
+                Click="OnMenuButtonClicked" />
+    </Grid>
+</Page>
